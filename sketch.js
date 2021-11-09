@@ -3,8 +3,11 @@ var scene = 0;
 // keep track of money donated
 var moneyDonated = 0;
 
+var grade1;
+
 function setup() {
   createCanvas(400, 400);
+  grade1 = new Game();
 }
 
 function draw() {
@@ -14,7 +17,7 @@ function draw() {
   if (scene === 0) {
     titleScreen();
   } else if (scene === 1) {
-    game();
+    grade1.display();
   }
 }
 
