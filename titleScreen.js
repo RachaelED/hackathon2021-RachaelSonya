@@ -11,6 +11,8 @@ var titleScreen = function () {
   rect(160,70,50,10);
   rect(50,70,50,10);
   rect(30,160,50,10);
+  ellipse(55,140,15,15)
+  ellipse(55,190,15,15)
   fill(0, 0, 0);
   textSize(20);
   text("Click to begin", 135, 330);
