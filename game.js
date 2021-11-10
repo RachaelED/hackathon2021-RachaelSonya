@@ -14,33 +14,42 @@ var Game = function (g, l, h, o){
     text("Grade " + this.grade, 10, 30);
     textSize(15);
     text("Type your answer to the following question in the space \nprovided.", 10, 75);
+
     
     rect(15, 125, 370, 250);
     fill(0, 0, 0);
     text(this.num1 + " " + this.operation + " " + this.num2 + " = ", 100, 150);
+    
+    // Call textInput function to store input as the answer
+    input.changed(textInput);
+    fill(0, 0, 0);
+    text("Your answer: " + ans, 15, 300);
+    
+    // button to check answer
+    fill(0, 0, 0);
+    rect(325, 325, 50, 25);
+    fill(255, 255, 255);
+    text("Check", 325, 345);
+    
+    fill(0, 0, 0);
+    text(scene, 200, 200);
+    
   };
   
-  //this.operation = ["-", "+"];
-  //this.operation = '+';
+  this.showAnswer = function () {
+   
+    // background(255, 0, 0);
+    
+    if (this.operation === '+') {
+      fill(0, 255, 0);
+      text(this.num1 + this.num2, 250, 200);
+      if (ans === this.num1 + this.num2) {
+        fill(0, 0, 255);
+        text("Correct!", 200, 200);
+        text(this.num1 + this.num2, 250, 200);
+      }
+    }
+  };
   
-  //text(this.num1 + this.operation + this.num2);
-  
-  
-  
-  
-  //set background
-  //background(0,0,0);
-  //Generate random numbers
-  //var num1 = Math.floor(Math.random()*20);
-  //var num2 = Math.floor(Math.random()*20);
-  //var math1 = ["-","+"];
-  
-  //var ans 
-  //while(ans!="STOP"){
-  //fill(255, 255, 255);
-  //text(num1,90,100);
-  //text(math1[0],100,100);
-  //text(num2,110,100);
-  //}
 
 };
