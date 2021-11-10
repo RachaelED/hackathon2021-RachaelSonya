@@ -7,7 +7,7 @@ var grade1;
 
 function setup() {
   createCanvas(400, 400);
-  grade1 = new Game();
+  grade1 = new Game(1, 0, 10, ['+', '-']);
 }
 
 function draw() {
