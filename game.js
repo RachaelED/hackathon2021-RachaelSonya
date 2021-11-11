@@ -40,6 +40,7 @@ var Game = function (g, l, h, o){
     
   };
   
+  // called to display the answer to the question
   this.showAnswer = function () {
     
     // redraw background
@@ -57,12 +58,15 @@ var Game = function (g, l, h, o){
       text(this.num1 + this.num2, 200, 150);
       if (ans === this.num1 + this.num2) {
         fill(0, 0, 255);
-        text("Correct! You donated 2 cents!", 150, 225);
-        moneyDonated += 0.02;
-        text(moneyDonated, 100, 300);
+        text("Correct! You donated 2 cents!", 50, 225);
+        fill(222,192,0);
+        ellipse(310,10,15,15);
+        //moneyDonated += 0.02;
+        donate = true;
         //text(this.num1 + this.num2, 250, 200);
       } else if (ans != this.num1 + this.num2) {
         text("Incorrect.", 150, 225);
+        donate = false;
       }
     }
     
@@ -72,10 +76,12 @@ var Game = function (g, l, h, o){
       text(this.num1 - this.num2, 200, 150);
       if (ans === this.num1 - this.num2) {
         fill(0, 0, 255);
-        text("Correct! You donated 2 cents!", 150, 225);
-        moneyDonated += 0.02;
+        text("Correct! You donated 2 cents!", 50, 225);
+        //moneyDonated += 0.02;
+        donate = true;
       } else if (ans != this.num1 - this.num2) {
         text("Incorrect.", 150, 225);
+        donate = false;
       }
     }
     
