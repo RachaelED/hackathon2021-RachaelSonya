@@ -2,6 +2,7 @@
 var scene = 0;
 // keep track of money donated
 var moneyDonated = 0;
+var donate = false;
 
 // initialize input and answer variables
 var input;
@@ -22,6 +23,7 @@ function draw() {
   // Call title screen function
   titleScreen();
   
+  // switch between the scenes
   if (scene === 0) {
     titleScreen();
   } else if (scene === 1) {
@@ -48,6 +50,11 @@ var mouseClicked = function () {
   }
   
   if (scene === 2 && mouseX < 200) {
+    if (donate === true) {
+      moneyDonated += 0.02;
+    }
+    
+    donate = false;
     grade1 = new Game(1, 0, 10, ['+', '-']);
     scene = 1;
  }
