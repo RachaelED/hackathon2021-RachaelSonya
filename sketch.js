@@ -46,6 +46,11 @@ var mouseClicked = function () {
     // rect(100, 100, 200, 200);
     
   }
+  
+  if (scene === 2 && mouseX < 200) {
+    grade1 = new Game(1, 0, 10, ['+', '-']);
+    scene = 1;
+ }
 };
 
 // set the answer variable to be the value of the user's input
