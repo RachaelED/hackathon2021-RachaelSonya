@@ -16,16 +16,20 @@ var Game = function (g, l, h, o){
     text("Grade " + this.grade, 10, 30);
     textSize(15);
     text("Type your answer to the following question in the space \nprovided.", 10, 75);
-
+    //Display piggy bank
+    document.getElementById("mydiv").style.visibility="visible";
+    
     
     rect(15, 125, 370, 250);
     fill(0, 0, 0);
-    text(this.num1 + " " + this.operation + " " + this.num2 + " = ", 100, 150);
+    textSize(30);
+    text(this.num1 + " " + this.operation + " " + this.num2 + " = __", 120, 200);
+    textSize(16);
     
     // Call textInput function to store input as the answer
     input.changed(textInput);
     fill(0, 0, 0);
-    text("Your answer: " + ans, 15, 300);
+    text("Your answer: " + ans, 15, 340);
     
     // button to check answer
     fill(0, 0, 0);
@@ -33,14 +37,14 @@ var Game = function (g, l, h, o){
     fill(255, 255, 255);
     text("Check", 325, 345);
     
-    fill(255, 0, 0);
-    text(moneyDonated, 250, 25);
+    fill(255, 255, 255);
+    text("Total: " + moneyDonated, 237, 40);
     
   };
   
   // called to display the answer to the question
   this.showAnswer = function () {
-    
+    document.getElementById("mydiv").style.visibility="visible";
     // redraw background
     background(0, 0, 0);
     fill(255, 255, 255);
@@ -48,6 +52,7 @@ var Game = function (g, l, h, o){
     stroke(0, 0, 0);
     rect(0, 0, 200, 400);
     noStroke();
+    // button to go to next question
     fill(0, 0, 0);
     text("Click to continue.", 25, 200);
     // display question
@@ -62,14 +67,18 @@ var Game = function (g, l, h, o){
       fill(0, 255, 0);
       text(this.num1 + this.num2, 330, 150);
       if (ans === this.num1 + this.num2) {
-        fill(0, 0, 255);
+        fill(0, 255, 0);
         text("Correct! \nYou donated 2 cents!", 205, 225);
+        
+        // display a coin on top of piggy bank
         fill(222,192,0);
-        ellipse(310,10,15,15);
+        ellipse(335,20,15,15);
+          
         //moneyDonated += 0.02;
         donate = true;
         //text(this.num1 + this.num2, 250, 200);
       } else if (ans != this.num1 + this.num2) {
+        fill(222, 20, 27);
         text("Incorrect.", 250, 225);
         donate = false;
       }
@@ -80,11 +89,17 @@ var Game = function (g, l, h, o){
       fill(0, 255, 0);
       text(this.num1 - this.num2, 330, 150);
       if (ans === this.num1 - this.num2) {
-        fill(0, 0, 255);
+        fill(0, 255, 0);
         text("Correct! \nYou donated 2 cents!", 205, 225);
+        
+        // display a coin on top of piggy bank
+        fill(222,192,0);
+        ellipse(335,20,15,15);
+        
         //moneyDonated += 0.02;
         donate = true;
       } else if (ans != this.num1 - this.num2) {
+        fill(222, 20, 27);
         text("Incorrect.", 250, 225);
         donate = false;
       }
