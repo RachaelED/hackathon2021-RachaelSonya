@@ -74,7 +74,7 @@ var Game = function (g, l, h, o){
         fill(222,192,0);
         ellipse(335,20,15,15);
           
-        //moneyDonated += 0.02;
+        
         donate = true;
         //text(this.num1 + this.num2, 250, 200);
       } else if (ans != this.num1 + this.num2) {
@@ -96,7 +96,7 @@ var Game = function (g, l, h, o){
         fill(222,192,0);
         ellipse(335,20,15,15);
         
-        //moneyDonated += 0.02;
+        
         donate = true;
       } else if (ans != this.num1 - this.num2) {
         fill(222, 20, 27);
