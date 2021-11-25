@@ -32,10 +32,11 @@ function draw() {
   }
 }
 
+
 // check if mouse is clicked
 var mouseClicked = function () {
   // if the current scene is the title screen, advance to game scene
-  if (scene === 0 && mouseX < 300 && mouseX > 100 && mouseY < 350 && mouseY > 300) {
+  if (scene === 0 && mouseX < 305 && mouseX > 105 && mouseY < 240 && mouseY > 200) {
     // set the variable input to be an input box
     input = createInput();
     // position it at (x, y)
@@ -82,8 +83,8 @@ var textInput = function () {
 // called when the 'check' button is pressed
 var checkAnswer = function () {
   // move the position of the input box and check button to be off of the canvas so that it doesn't show up on showAnswer screen
-  input.position(500, 500);
-  check.position(500, 500);
+  input.position(-500, -500);
+  check.position(-500, -500);
   // advance the scene to 2 so that it displays the answer screen
   scene = 2;
 };
