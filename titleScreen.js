@@ -33,3 +33,4 @@ var titleScreen = function () {
   fill(0, 0, 0);
   text("Click to begin", 145, 245);
 };
+
