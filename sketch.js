@@ -6,6 +6,7 @@ var donate = false;
 
 // initialize input and answer variables
 var input;
+var check;
 var ans;
 
 // initialize grade1 variable
@@ -13,8 +14,6 @@ var grade1;
 
 function setup() {
   createCanvas(400, 400);
-  // create an input box
-  input = createInput();
   // pass parameters to game function
   grade1 = new Game(1, 0, 10, ['+', '-']);
 }
@@ -37,30 +36,54 @@ function draw() {
 var mouseClicked = function () {
   // if the current scene is the title screen, advance to game scene
   if (scene === 0 && mouseX < 300 && mouseX > 100 && mouseY < 350 && mouseY > 300) {
+    // set the variable input to be an input box
+    input = createInput();
+    // position it at (x, y)
+    input.position(200, 225);
+    // set the variable check to be a button that says "Check"
+    check = createButton('Check');
+    // position it at (x, y)
+    check.position(325, 225);
+    // establish that if the button is pressed, call the checkAnswer function
+    check.mousePressed(checkAnswer);
+    // then, advance to the next scene to show the questions
     scene++;
   }
   
-  // if the current scene is the display scene
-  if (scene === 1 && mouseX < 375 && mouseX > 325 && mouseY < 350 && mouseY > 325) {
-    //rect(325, 325, 50, 25);
-    scene++;
-    // fill(0, 0, 255);
-    // rect(100, 100, 200, 200);
-    
-  }
-  
+  // if the showAnswer scene is being displayed
   if (scene === 2 && mouseX < 200) {
+    
+    // check if the value of donate is true (did the user answer correctly)
     if (donate === true) {
+      // increase the value of moneyDonated by 2 cents
       moneyDonated += 0.02;
     }
     
+    // reset donate to false
     donate = false;
+    // reset the variable grade1 to be a new Game (question) and pass in parameters
     grade1 = new Game(1, 0, 10, ['+', '-']);
+    // reset the input value to read nothing (so that the last thing input by the user isn't still present)
+    input.value('');
+    // reset the position of the input box and check button to their regular positions
+    input.position(200, 225);
+    check.position(325, 225);
+    // go back to scene 1 (display a question)
     scene = 1;
  }
+  
 };
 
-// set the answer variable to be the value of the user's input
+// set the ans variable to be the value of the user's input
 var textInput = function () {
   ans = input.value();
+};
+
+// called when the 'check' button is pressed
+var checkAnswer = function () {
+  // move the position of the input box and check button to be off of the canvas so that it doesn't show up on showAnswer screen
+  input.position(500, 500);
+  check.position(500, 500);
+  // advance the scene to 2 so that it displays the answer screen
+  scene = 2;
 };
