@@ -11,7 +11,7 @@ var titleScreen = function () {
   textSize(16);
   text("By: Rachael D. & Sonya R.", 107, 180);
   // button rectangle
-  rect(100, 300, 200, 40);
+  rect(105, 220, 200, 40);
   noStroke();
   // addition sign
   rect(350,130,10,50);
@@ -31,5 +31,5 @@ var titleScreen = function () {
   // text for button
   textSize(20);
   fill(0, 0, 0);
-  text("Click to begin", 135, 330);
+  text("Click to begin", 145, 245);
 };
