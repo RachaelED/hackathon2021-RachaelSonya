@@ -40,11 +40,11 @@ var mouseClicked = function () {
     // set the variable input to be an input box
     input = createInput();
     // position it at (x, y)
-    input.position(175, 225);
+    input.position(200, 265);
     // set the variable check to be a button that says "Check"
     check = createButton('Check');
     // position it at (x, y)
-    check.position(275, 225);
+    check.position(325, 265);
     // establish that if the button is pressed, call the checkAnswer function
     check.mousePressed(checkAnswer);
     // then, advance to the next scene to show the questions
@@ -67,8 +67,8 @@ var mouseClicked = function () {
     // reset the input value to read nothing (so that the last thing input by the user isn't still present)
     input.value('');
     // reset the position of the input box and check button to their regular positions
-    input.position(175, 225);
-    check.position(275, 225);
+    input.position(200, 265);
+    check.position(325, 265);
     // go back to scene 1 (display a question)
     scene = 1;
  }
