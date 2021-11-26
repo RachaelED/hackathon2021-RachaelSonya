@@ -1,6 +1,8 @@
 var titleScreen = function () {
   // hide piggybank image
   document.getElementById("mydiv").style.visibility="hidden";
+  //display ad
+  document.getElementById("myad1").style.visibility="visible ";
   // draw background
   background(0, 0, 0);
   // write title of game
@@ -33,4 +35,3 @@ var titleScreen = function () {
   fill(0, 0, 0);
   text("Click to begin", 145, 245);
 };
-
